@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>María Paula — Cotillón, Bazar, Sublimados, Juguetes & Más</title>
+  <meta name="description" content="Tienda líder en Paraguay de cotillón, bazar, sublimación, juguetes, regalos y artículos para el hogar. ¡Comprá online y recibí en tu casa!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-content">
+        <div class="top-bar-left">
+          <span class="top-badge"><i class="fas fa-truck"></i> Envíos a todo Paraguay</span>
+          <span class="top-badge"><i class="fas fa-phone"></i> (0981) 123-456</span>
+        </div>
+        <div class="top-bar-right">
+          <span class="top-badge highlight"><i class="fas fa-fire"></i> ¡Ofertas de la semana!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <span class="logo-letter">M</span>
+            <span class="logo-letter">P</span>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">María Paula</span>
+            <span class="logo-tagline">Cotillón & Sublimados</span>
+          </div>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" placeholder="¿Qué estás buscando? Cotillón, juguetes, regalos..." id="searchInput">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <a href="#" class="action-btn" title="Mi cuenta">
+            <i class="fas fa-user"></i>
+            <span class="action-label">Mi cuenta</span>
+          </a>
+          <a href="#" class="action-btn" title="Favoritos">
+            <i class="fas fa-heart"></i>
+            <span class="action-label">Favoritos</span>
+            <span class="action-badge">3</span>
+          </a>
+          <a href="#" class="action-btn cart-btn" title="Carrito" id="cartBtn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="action-label">Carrito</span>
+            <span class="action-badge" id="cartCount">2</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="#" class="nav-link active">Inicio</a></li>
+          <li><a href="#categorias" class="nav-link">Categorías <i class="fas fa-chevron-down"></i></a></li>
+          <li><a href="#destacados" class="nav-link">Destacados</a></li>
+          <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+          <li><a href="#combos" class="nav-link">Combos</a></li>
+          <li><a href="#nuevos" class="nav-link">Nuevos</a></li>
+          <li><a href="#" class="nav-link nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-title">Menú</span>
+      <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="#categorias"><i class="fas fa-th-large"></i> Categorías</a></li>
+      <li><a href="#destacados"><i class="fas fa-star"></i> Destacados</a></li>
+      <li><a href="#ofertas"><i class="fas fa-tag"></i> Ofertas</a></li>
+      <li><a href="#combos"><i class="fas fa-box-open"></i> Combos</a></li>
+      <li><a href="#nuevos"><i class="fas fa-sparkles"></i> Nuevos</a></li>
+      <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <a href="#" class="btn btn-primary btn-block"><i class="fas fa-user"></i> Mi cuenta</a>
+      <a href="#" class="btn btn-outline btn-block"><i class="fas fa-shopping-bag"></i> Ver carrito</a>
+    </div>
+  </div>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-bag"></i> Tu carrito</h3>
+      <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items injected by JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span class="cart-total-price" id="cartTotal">Gs. 0</span>
+      </div>
+      <button class="btn btn-primary btn-block btn-lg"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</button>
+      <button class="btn btn-outline btn-block">Seguir comprando</button>
+    </div>
+  </div>
+
+  <!-- HERO SLIDER -->
+  <section class="hero" id="hero">
+    <div class="hero-slider" id="heroSlider">
+      <!-- Slide 1 -->
+      <div class="hero-slide active" style="background: linear-gradient(135deg, #00B894 0%, #00CEC9 50%, #0984E3 100%);">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fas fa-fire"></i> Temporada de Fiestas</div>
+          <h1 class="hero-title">Todo para tu <span class="hero-highlight">Fiesta Perfecta</span></h1>
+          <p class="hero-desc">Cotillón, decoración, globos, piñatas y mucho más. ¡Hacemos realidad la fiesta de tus sueños!</p>
+          <div class="hero-actions">
+            <a href="#destacados" class="btn btn-white btn-lg"><i class="fas fa-shopping-bag"></i> Ver productos</a>
+            <a href="#" class="btn btn-outline-white btn-lg"><i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-num">500+</span>
+              <span class="hero-stat-label">Productos</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">10K+</span>
+              <span class="hero-stat-label">Clientes felices</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">24h</span>
+              <span class="hero-stat-label">Entrega express</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-float hero-float-1">🎈</div>
+          <div class="hero-float hero-float-2">🎁</div>
+          <div class="hero-float hero-float-3">🎉</div>
+          <div class="hero-float hero-float-4">🎊</div>
+          <div class="hero-float hero-float-5">🪅</div>
+          <div class="hero-illustration">
+            <div class="party-box">
+              <div class="party-box-lid"></div>
+              <div class="party-box-body"></div>
+              <div class="confetti confetti-1"></div>
+              <div class="confetti confetti-2"></div>
+              <div class="confetti confetti-3"></div>
+              <div class="confetti confetti-4"></div>
+              <div class="confetti confetti-5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide" style="background: linear-gradient(135deg, #FDCB6E 0%, #E17055 50%, #D63031 100%);">
+        <div class="hero-content">
+          <div class="hero-badge" style="background: rgba(255,255,255,0.2); color: #fff;"><i class="fas fa-percentage"></i> Hasta 40% OFF</div>
+          <h1 class="hero-title">Ofertas <span class="hero-highlight">Imperdibles</span></h1>
+          <p class="hero-desc">Aprovechá los descuentos en juguetes, bazar y artículos para el hogar. ¡Stock limitado!</p>
+          <div class="hero-actions">
+            <a href="#ofertas" class="btn btn-white btn-lg"><i class="fas fa-tag"></i> Ver ofertas</a>
+            <a href="#" class="btn btn-outline-white btn-lg"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-float hero-float-1">🏷️</div>
+          <div class="hero-float hero-float-2">💰</div>
+          <div class="hero-float hero-float-3">🛍️</div>
+          <div class="hero-float hero-float-4">⭐</div>
+          <div class="hero-float hero-float-5">🔥</div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide" style="background: linear-gradient(135deg, #A29BFE 0%, #6C5CE7 50%, #FD79A8 100%);">
+        <div class="hero-content">
+          <div class="hero-badge" style="background: rgba(255,255,255,0.2); color: #fff;"><i class="fas fa-magic"></i> Personalizados</div>
+          <h1 class="hero-title">Sublimados <span class="hero-highlight">Únicos</span></h1>
+          <p class="hero-desc">Tazas, remeras, gorras y más con tu diseño personalizado. El regalo perfecto para cualquier ocasión.</p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-white btn-lg"><i class="fas fa-magic"></i> Personalizar</a>
+            <a href="#" class="btn btn-outline-white btn-lg"><i class="fab fa-whatsapp"></i> Pedir diseño</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-float hero-float-1">☕</div>
+          <div class="hero-float hero-float-2">👕</div>
+          <div class="hero-float hero-float-3">🧢</div>
+          <div class="hero-float hero-float-4">🖼️</div>
+          <div class="hero-float hero-float-5">✨</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <div class="hero-dots" id="heroDots">
+      <button class="hero-dot active" data-slide="0"></button>
+      <button class="hero-dot" data-slide="1"></button>
+      <button class="hero-dot" data-slide="2"></button>
+    </div>
+    <button class="hero-arrow hero-prev" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
+    <button class="hero-arrow hero-next" id="heroNext"><i class="fas fa-chevron-right"></i></button>
+  </section>
+
+  <!-- BENEFITS BAR -->
+  <section class="benefits-bar">
+    <div class="container">
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-truck"></i></div>
+          <div class="benefit-text">
+            <strong>Envíos a todo el país</strong>
+            <span>Rápido y seguro</span>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-headset"></i></div>
+          <div class="benefit-text">
+            <strong>Atención personalizada</strong>
+            <span>Te ayudamos a elegir</span>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-tags"></i></div>
+          <div class="benefit-text">
+            <strong>Mejores precios</strong>
+            <span>Competitivos siempre</span>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="benefit-text">
+            <strong>Compra protegida</strong>
+            <span>Garantía de satisfacción</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="section categories" id="categorias">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fas fa-th-large"></i> Explorá</span>
+        <h2 class="section-title">Nuestras <span class="text-gradient">Categorías</span></h2>
+        <p class="section-desc">Encontrá todo lo que necesitás organizado por secciones</p>
+      </div>
+      <div class="categories-grid">
+        <a href="#" class="category-card category-cotillon">
+          <div class="category-bg"></div>
+          <div class="category-icon">🎉</div>
+          <div class="category-info">
+            <h3>Cotillón</h3>
+            <span>120+ productos</span>
+          </div>
+          <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="#" class="category-card category-bazar">
+          <div class="category-bg"></div>
+          <div class="category-icon">🏠</div>
+          <div class="category-info">
+            <h3>Bazar</h3>
+            <span>80+ productos</span>
+          </div>
+          <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="#" class="category-card category-sublimados">
+          <div class="category-bg"></div>
+          <div class="category-icon">✨</div>
+          <div class="category-info">
+            <h3>Sublimados</h3>
+            <span>50+ productos</span>
+          </div>
+          <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="#" class="category-card category-juguetes">
+          <div class="category-bg"></div>
+          <div class="category-icon">🧸</div>
+          <div class="category-info">
+            <h3>Juguetes</h3>
+            <span>90+ productos</span>
+          </div>
+          <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="#" class="category-card category-regalos">
+          <div class="category-bg"></div>
+          <div class="category-icon">🎁</div>
+          <div class="category-info">
+            <h3>Regalos</h3>
+            <span>60+ productos</span>
+          </div>
+          <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="#" class="category-card category-hogar">
+          <div class="category-bg"></div>
+          <div class="category-icon">🛋️</div>
+          <div class="category-info">
+            <h3>Hogar</h3>
+            <span>70+ productos</span>
+          </div>
+          <div class="category-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTACADOS -->
+  <section class="section products-section" id="destacados">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fas fa-star"></i> Populares</span>
+        <h2 class="section-title">Productos <span class="text-gradient">Destacados</span></h2>
+        <p class="section-desc">Lo más vendido esta semana, elegido por nuestros clientes</p>
+      </div>
+      <div class="products-grid" id="featuredProducts">
+        <!-- Products injected by JS -->
+      </div>
+      <div class="section-footer">
+        <a href="#" class="btn btn-outline btn-lg">Ver todos los destacados <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <section class="promo-banner">
+    <div class="container">
+      <div class="promo-banner-inner">
+        <div class="promo-content">
+          <span class="promo-label"><i class="fas fa-bolt"></i> Oferta flash</span>
+          <h2 class="promo-title">Combo Cumpleaños <span class="promo-highlight">Completo</span></h2>
+          <p class="promo-desc">Globos, piñata, velas, serpentinas, gorritos y más. Todo en un solo pack con descuento especial.</p>
+          <div class="promo-price">
+            <span class="promo-old-price">Gs. 450.000</span>
+            <span class="promo-new-price">Gs. 320.000</span>
+            <span class="promo-discount">-29%</span>
+          </div>
+          <div class="promo-timer" id="promoTimer">
+            <div class="timer-item"><span class="timer-num" id="timerH">04</span><span class="timer-label">hrs</span></div>
+            <div class="timer-sep">:</div>
+            <div class="timer-item"><span class="timer-num" id="timerM">32</span><span class="timer-label">min</span></div>
+            <div class="timer-sep">:</div>
+            <div class="timer-item"><span class="timer-num" id="timerS">15</span><span class="timer-label">seg</span></div>
+          </div>
+          <a href="#" class="btn btn-white btn-lg"><i class="fas fa-shopping-bag"></i> Agregar al carrito</a>
+        </div>
+        <div class="promo-visual">
+          <div class="promo-circle"></div>
+          <div class="promo-float">🎂</div>
+          <div class="promo-float promo-float-2">🎈</div>
+          <div class="promo-float promo-float-3">🎁</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTAS -->
+  <section class="section products-section" id="ofertas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-danger"><i class="fas fa-fire"></i> Hot Sale</span>
+        <h2 class="section-title">Ofertas <span class="text-gradient">Especiales</span></h2>
+        <p class="section-desc">Aprovechá antes de que se acaben. Stock limitado.</p>
+      </div>
+      <div class="products-grid" id="saleProducts">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- COMBOS -->
+  <section class="section combos-section" id="combos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-purple"><i class="fas fa-box-open"></i> Ahorrá más</span>
+        <h2 class="section-title">Combos <span class="text-gradient">Promocionales</span></h2>
+        <p class="section-desc">Armá tu combo y pagá menos. Ideal para fiestas y eventos.</p>
+      </div>
+      <div class="combos-grid">
+        <div class="combo-card">
+          <div class="combo-badge">Ahorrá Gs. 85.000</div>
+          <div class="combo-image">
+            <div class="combo-emoji">🎉🎈🎁</div>
+          </div>
+          <div class="combo-info">
+            <h3>Combo Cumpleaños Básico</h3>
+            <p>Piñata + 20 globos + serpentinas + 10 gorritos + velas</p>
+            <div class="combo-price">
+              <span class="combo-old">Gs. 180.000</span>
+              <span class="combo-new">Gs. 95.000</span>
+            </div>
+            <button class="btn btn-primary btn-block"><i class="fas fa-shopping-bag"></i> Agregar combo</button>
+          </div>
+        </div>
+        <div class="combo-card combo-featured">
+          <div class="combo-badge combo-badge-best">Más vendido</div>
+          <div class="combo-image">
+            <div class="combo-emoji">🎊🪅🎂</div>
+          </div>
+          <div class="combo-info">
+            <h3>Combo Fiesta Completa</h3>
+            <p>Piñata grande + 50 globos + decoración + cotillón 20 pers. + torta decorada</p>
+            <div class="combo-price">
+              <span class="combo-old">Gs. 450.000</span>
+              <span class="combo-new">Gs. 320.000</span>
+            </div>
+            <button class="btn btn-primary btn-block"><i class="fas fa-shopping-bag"></i> Agregar combo</button>
+          </div>
+        </div>
+        <div class="combo-card">
+          <div class="combo-badge">Ahorrá Gs. 60.000</div>
+          <div class="combo-image">
+            <div class="combo-emoji">☕👕🧢</div>
+          </div>
+          <div class="combo-info">
+            <h3>Combo Sublimados</h3>
+            <p>Taza personalizada + remera + gorra + llavero. Con tu diseño.</p>
+            <div class="combo-price">
+              <span class="combo-old">Gs. 150.000</span>
+              <span class="combo-new">Gs. 90.000</span>
+            </div>
+            <button class="btn btn-primary btn-block"><i class="fas fa-shopping-bag"></i> Agregar combo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPORADAS -->
+  <section class="section seasons-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-pink"><i class="fas fa-calendar-alt"></i> Siempre actual</span>
+        <h2 class="section-title">Temporadas <span class="text-gradient">Especiales</span></h2>
+        <p class="section-desc">Productos organizados por momentos del año</p>
+      </div>
+      <div class="seasons-grid">
+        <div class="season-card">
+          <div class="season-bg" style="background: linear-gradient(135deg, #FF6B6B, #FFE66D);"></div>
+          <div class="season-icon">🎂</div>
+          <h3>Cumpleaños</h3>
+          <p>Todo para celebrar</p>
+          <a href="#" class="season-link">Ver productos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="season-card">
+          <div class="season-bg" style="background: linear-gradient(135deg, #4ECDC4, #44A08D);"></div>
+          <div class="season-icon">🧒</div>
+          <h3>Día del Niño</h3>
+          <p>Juguetes y regalos</p>
+          <a href="#" class="season-link">Ver productos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="season-card">
+          <div class="season-bg" style="background: linear-gradient(135deg, #C0392B, #E74C3C);"></div>
+          <div class="season-icon">🎄</div>
+          <h3>Navidad</h3>
+          <p>Decoración y regalos</p>
+          <a href="#" class="season-link">Ver productos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="season-card">
+          <div class="season-bg" style="background: linear-gradient(135deg, #8E44AD, #9B59B6);"></div>
+          <div class="season-icon">❤️</div>
+          <h3>San Valentín</h3>
+          <p>Regalos románticos</p>
+          <a href="#" class="season-link">Ver productos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="season-card">
+          <div class="season-bg" style="background: linear-gradient(135deg, #F39C12, #E67E22);"></div>
+          <div class="season-icon">🎃</div>
+          <h3>Halloween</h3>
+          <p>Disfraces y dulces</p>
+          <a href="#" class="season-link">Ver productos <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="season-card">
+          <div class="season-bg" style="background: linear-gradient(135deg, #3498DB, #2980B9);"></div>
+          <div class="season-icon">🎓</div>
+          <h3>Graduación</h3>
+          <p>Regalos especiales</p>
+          <a href="#" class="season-link">Ver productos <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUEVOS -->
+  <section class="section products-section" id="nuevos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-green"><i class="fas fa-sparkles"></i> Recién llegados</span>
+        <h2 class="section-title">Productos <span class="text-gradient">Nuevos</span></h2>
+        <p class="section-desc">Las últimas novedades que acaban de llegar a la tienda</p>
+      </div>
+      <div class="products-grid" id="newProducts">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge"><i class="fas fa-heart"></i> Clientes felices</span>
+        <h2 class="section-title">Lo que dicen <span class="text-gradient">nuestros clientes</span></h2>
+      </div>
+      <div class="testimonials-slider" id="testimonialsSlider">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Compré todo para el cumple de mi hija y quedó espectacular. La atención es increíble y los precios son los mejores de Asunción."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LC</div>
+            <div class="testimonial-info">
+              <strong>Lucía Cardozo</strong>
+              <span>Cliente frecuente</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"Los sublimados son de primera calidad. Pedí tazas para mi empresa y quedaron perfectas. ¡Totalmente recomendado!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MR</div>
+            <div class="testimonial-info">
+              <strong>Marcos Ríos</strong>
+              <span>Emprendedor</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">"El combo de cumpleaños me salvó la vida. Todo llegó completo, bien empacado y a tiempo. María Paula es mi tienda de confianza."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AG</div>
+            <div class="testimonial-info">
+              <strong>Ana Giménez</strong>
+              <span>Mamá de 3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM / SOCIAL -->
+  <section class="section social-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge badge-pink"><i class="fab fa-instagram"></i> @mariapaula.py</span>
+        <h2 class="section-title">Seguinos en <span class="text-gradient">Instagram</span></h2>
+        <p class="section-desc">Mirá las últimas novedades, ofertas y sorteos</p>
+      </div>
+      <div class="social-grid">
+        <div class="social-item">
+          <div class="social-placeholder">
+            <i class="fab fa-instagram"></i>
+            <span>Post 1</span>
+          </div>
+        </div>
+        <div class="social-item">
+          <div class="social-placeholder">
+            <i class="fab fa-instagram"></i>
+            <span>Post 2</span>
+          </div>
+        </div>
+        <div class="social-item">
+          <div class="social-placeholder">
+            <i class="fab fa-instagram"></i>
+            <span>Post 3</span>
+          </div>
+        </div>
+        <div class="social-item">
+          <div class="social-placeholder">
+            <i class="fab fa-instagram"></i>
+            <span>Post 4</span>
+          </div>
+        </div>
+        <div class="social-item">
+          <div class="social-placeholder">
+            <i class="fab fa-instagram"></i>
+            <span>Post 5</span>
+          </div>
+        </div>
+        <div class="social-item">
+          <div class="social-placeholder">
+            <i class="fab fa-instagram"></i>
+            <span>Post 6</span>
+          </div>
+        </div>
+      </div>
+      <div class="social-cta">
+        <a href="#" class="btn btn-instagram btn-lg"><i class="fab fa-instagram"></i> Seguir en Instagram</a>
+        <a href="#" class="btn btn-tiktok btn-lg"><i class="fab fa-tiktok"></i> Seguir en TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-content">
+          <h2>¡No te pierdas ninguna oferta!</h2>
+          <p>Suscribite y recibí descuentos exclusivos, novedades y sorteos directo a tu WhatsApp.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+          <input type="tel" placeholder="Tu número de WhatsApp" required>
+          <button type="submit" class="btn btn-white"><i class="fab fa-whatsapp"></i> Suscribirme</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo footer-logo">
+            <div class="logo-icon">
+              <span class="logo-letter">M</span>
+              <span class="logo-letter">P</span>
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">María Paula</span>
+              <span class="logo-tagline">Cotillón & Sublimados</span>
+            </div>
+          </a>
+          <p class="footer-desc">Tu tienda de confianza en Paraguay. Cotillón, bazar, sublimados, juguetes, regalos y artículos para el hogar.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <ul>
+            <li><a href="#">Cotillón</a></li>
+            <li><a href="#">Bazar</a></li>
+            <li><a href="#">Sublimados</a></li>
+            <li><a href="#">Juguetes</a></li>
+            <li><a href="#">Regalos</a></li>
+            <li><a href="#">Hogar</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Cómo comprar</a></li>
+            <li><a href="#">Envíos</a></li>
+            <li><a href="#">Devoluciones</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> Asunción, Paraguay</li>
+            <li><i class="fas fa-phone"></i> (0981) 123-456</li>
+            <li><i class="fab fa-whatsapp"></i> (0981) 123-456</li>
+            <li><i class="fas fa-envelope"></i> info@mariapaula.com.py</li>
+            <li><i class="fas fa-clock"></i> Lun - Sáb: 8:00 - 20:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 María Paula. Todos los derechos reservados.</p>
+        <p class="footer-credit">Hecho con ❤️ en Paraguay</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/595981123456" class="whatsapp-float" target="_blank" title="Chateá por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-label">¿Consultas?</span>
+  </a>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-body" id="modalBody">
+        <!-- Content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Producto agregado al carrito</span>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
