@@ -5,32 +5,32 @@
 // === DATA ===
 const products = {
   featured: [
-    { id: 1, name: 'Piñata Unicornio Arcoíris', category: 'Cotillón', emoji: '🦄', price: 45000, oldPrice: 65000, rating: 4.8, reviews: 124, badge: 'sale', discount: '-31%' },
-    { id: 2, name: 'Globos Metálicos Pack x50', category: 'Cotillón', emoji: '🎈', price: 32000, oldPrice: null, rating: 4.9, reviews: 89, badge: 'hot', discount: null },
-    { id: 3, name: 'Taza Sublimada Personalizada', category: 'Sublimados', emoji: '☕', price: 28000, oldPrice: 35000, rating: 4.7, reviews: 56, badge: 'sale', discount: '-20%' },
-    { id: 4, name: 'Set de Cocina Infantil', category: 'Juguetes', emoji: '👩‍🍳', price: 85000, oldPrice: null, rating: 4.6, reviews: 42, badge: 'new', discount: null },
-    { id: 5, name: 'Velas de Cumpleaños LED', category: 'Cotillón', emoji: '🕯️', price: 12000, oldPrice: 18000, rating: 4.5, reviews: 203, badge: 'sale', discount: '-33%' },
-    { id: 6, name: 'Remera Sublimada Full Color', category: 'Sublimados', emoji: '👕', price: 55000, oldPrice: null, rating: 4.8, reviews: 67, badge: 'hot', discount: null },
-    { id: 7, name: 'Kit Serpentinas y Confeti', category: 'Cotillón', emoji: '🎉', price: 8000, oldPrice: 12000, rating: 4.4, reviews: 312, badge: 'sale', discount: '-33%' },
-    { id: 8, name: 'Mochila Escolar Personaje', category: 'Juguetes', emoji: '🎒', price: 68000, oldPrice: null, rating: 4.9, reviews: 45, badge: 'new', discount: null },
+    { id: 1, name: 'Piñata Unicornio Arcoíris', category: 'Cotillón', image: '🦄', price: 45000, oldPrice: 65000, rating: 4.8, reviews: 124, badge: 'sale', discount: '-31%' },
+    { id: 2, name: 'Globos Metálicos Pack x50', category: 'Cotillón', image: '🎈', price: 32000, oldPrice: null, rating: 4.9, reviews: 89, badge: 'hot', discount: null },
+    { id: 3, name: 'Taza Sublimada Personalizada', category: 'Sublimados', image: '☕', price: 28000, oldPrice: 35000, rating: 4.7, reviews: 56, badge: 'sale', discount: '-20%' },
+    { id: 4, name: 'Set de Cocina Infantil', category: 'Juguetes', image: '👩‍🍳', price: 85000, oldPrice: null, rating: 4.6, reviews: 42, badge: 'new', discount: null },
+    { id: 5, name: 'Velas de Cumpleaños LED', category: 'Cotillón', image: '🕯️', price: 12000, oldPrice: 18000, rating: 4.5, reviews: 203, badge: 'sale', discount: '-33%' },
+    { id: 6, name: 'Remera Sublimada Full Color', category: 'Sublimados', image: '👕', price: 55000, oldPrice: null, rating: 4.8, reviews: 67, badge: 'hot', discount: null },
+    { id: 7, name: 'Kit Serpentinas y Confeti', category: 'Cotillón', image: '🎉', price: 8000, oldPrice: 12000, rating: 4.4, reviews: 312, badge: 'sale', discount: '-33%' },
+    { id: 8, name: 'Mochila Escolar Personaje', category: 'Juguetes', image: '🎒', price: 68000, oldPrice: null, rating: 4.9, reviews: 45, badge: 'new', discount: null },
   ],
   sale: [
-    { id: 9, name: 'Gorrito de Cumpleaños x20', category: 'Cotillón', emoji: '🎊', price: 15000, oldPrice: 25000, rating: 4.3, reviews: 178, badge: 'sale', discount: '-40%' },
-    { id: 10, name: 'Llavero Sublimado Doble', category: 'Sublimados', emoji: '🔑', price: 8000, oldPrice: 15000, rating: 4.6, reviews: 89, badge: 'sale', discount: '-47%' },
-    { id: 11, name: 'Pelota Anti-Estrés x12', category: 'Juguetes', emoji: '🏀', price: 18000, oldPrice: 30000, rating: 4.5, reviews: 134, badge: 'sale', discount: '-40%' },
-    { id: 12, name: 'Guirnalda Feliz Cumple', category: 'Cotillón', emoji: '🎀', price: 10000, oldPrice: 18000, rating: 4.7, reviews: 245, badge: 'sale', discount: '-44%' },
+    { id: 9, name: 'Gorrito de Cumpleaños x20', category: 'Cotillón', image: '🎊', price: 15000, oldPrice: 25000, rating: 4.3, reviews: 178, badge: 'sale', discount: '-40%' },
+    { id: 10, name: 'Llavero Sublimado Doble', category: 'Sublimados', image: '🔑', price: 8000, oldPrice: 15000, rating: 4.6, reviews: 89, badge: 'sale', discount: '-47%' },
+    { id: 11, name: 'Pelota Anti-Estrés x12', category: 'Juguetes', image: '🏀', price: 18000, oldPrice: 30000, rating: 4.5, reviews: 134, badge: 'sale', discount: '-40%' },
+    { id: 12, name: 'Guirnalda Feliz Cumple', category: 'Cotillón', image: '🎀', price: 10000, oldPrice: 18000, rating: 4.7, reviews: 245, badge: 'sale', discount: '-44%' },
   ],
   new: [
-    { id: 13, name: 'Termo Sublimado 500ml', category: 'Sublimados', emoji: '🥤', price: 45000, oldPrice: null, rating: 5.0, reviews: 12, badge: 'new', discount: null },
-    { id: 14, name: 'Kit Decoración Baby Shower', category: 'Cotillón', emoji: '🍼', price: 55000, oldPrice: null, rating: 4.8, reviews: 8, badge: 'new', discount: null },
-    { id: 15, name: 'Rompecabezas 1000 Piezas', category: 'Juguetes', emoji: '🧩', price: 38000, oldPrice: null, rating: 4.9, reviews: 15, badge: 'new', discount: null },
-    { id: 16, name: 'Set Bazar Minimalista', category: 'Bazar', emoji: '🏠', price: 72000, oldPrice: null, rating: 4.7, reviews: 6, badge: 'new', discount: null },
+    { id: 13, name: 'Termo Sublimado 500ml', category: 'Sublimados', image: '🥤', price: 45000, oldPrice: null, rating: 5.0, reviews: 12, badge: 'new', discount: null },
+    { id: 14, name: 'Kit Decoración Baby Shower', category: 'Cotillón', image: '🍼', price: 55000, oldPrice: null, rating: 4.8, reviews: 8, badge: 'new', discount: null },
+    { id: 15, name: 'Rompecabezas 1000 Piezas', category: 'Juguetes', image: '🧩', price: 38000, oldPrice: null, rating: 4.9, reviews: 15, badge: 'new', discount: null },
+    { id: 16, name: 'Set Bazar Minimalista', category: 'Bazar', image: '🏠', price: 72000, oldPrice: null, rating: 4.7, reviews: 6, badge: 'new', discount: null },
   ]
 };
 
 let cart = [
-  { id: 1, name: 'Piñata Unicornio Arcoíris', emoji: '🦄', price: 45000, qty: 1 },
-  { id: 3, name: 'Taza Sublimada Personalizada', emoji: '☕', price: 28000, qty: 2 }
+  { id: 1, name: 'Piñata Unicornio Arcoíris', image: '🦄', price: 45000, qty: 1 },
+  { id: 3, name: 'Taza Sublimada Personalizada', image: '☕', price: 28000, qty: 2 }
 ];
 
 let wishlist = [2, 6];
@@ -216,7 +216,7 @@ function addToCart(product) {
     cart.push({
       id: product.id,
       name: product.name,
-      emoji: product.emoji,
+      image: product.emoji,
       price: product.price,
       qty: 1
     });
