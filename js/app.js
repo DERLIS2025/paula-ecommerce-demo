@@ -172,7 +172,7 @@ function renderCart() {
     total += item.price * item.qty;
     return `
       <div class="cart-item">
-        <div class="cart-item-image">${item.emoji}</div>
+        <div class="cart-item-image">${item.image}</div>
         <div class="cart-item-info">
           <div class="cart-item-name">${item.name}</div>
           <div class="cart-item-price">Gs. ${item.price.toLocaleString()}</div>
@@ -216,13 +216,13 @@ function addToCart(product) {
     cart.push({
       id: product.id,
       name: product.name,
-      image: product.emoji,
+      image: product.image,
       price: product.price,
       qty: 1
     });
   }
   renderCart();
-  showToast(`${product.emoji} ${product.name} agregado al carrito`);
+  showToast(`${product.image} ${product.name} agregado al carrito`);
 
   // Animate cart badge
   cartCount.style.transform = 'scale(1.4)';
@@ -253,7 +253,7 @@ function renderProducts(containerId, productList) {
           <i class="${isWishlisted ? 'fas' : 'far'} fa-heart"></i>
         </button>
         <div class="product-image">
-          ${product.emoji}
+          ${product.image}
           <button class="product-quickview" onclick="openQuickView(${product.id})">
             <i class="fas fa-eye"></i> Vista rápida
           </button>
@@ -318,7 +318,7 @@ function openQuickView(id) {
   modalBody.innerHTML = `
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
       <div style="background: linear-gradient(135deg, #f1f2f6 0%, #f8f9fa 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; min-height: 300px; font-size: 6rem;">
-        ${product.emoji}
+        ${product.image}
       </div>
       <div>
         <div style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">${product.category}</div>
